@@ -18,7 +18,8 @@ let firstCard, secondCard
 const Cardflip = e => {
     if(!started)return;
     if(boardLocked) return;
-    
+    //these lines are needed to ensure that there are no bugs when the user selects more than 3 cards at a time,
+    // or starts choosing cards before the game starts
     
     const target = e.target.parentElement;
     
@@ -37,10 +38,10 @@ const Cardflip = e => {
 };
 
 const buttonFlip = q =>{
+    //in addition to flipping the new game button and starting a new game, the restart function is written here
     if(started) return;
     if(restart){
-        const start_button = q.target.parentElement;
-        start_button.classList.remove("flip");
+        q.target.parentElement.classList.remove("flip");
         resetCards();
         cards.forEach(card => {
             card.classList.remove("disappear");
@@ -48,14 +49,14 @@ const buttonFlip = q =>{
         end_game.classList.remove("end");
         end_game.textContent = "";
         restart = false;
-
+        setTimeout(()=>{
+            document.getElementById("back_img").src="./images/button_score.jpg";
+        }, 500);
     }else{
-        const start_button = q.target.parentElement;
-        start_button.classList.add("flip");
+        q.target.parentElement.classList.add("flip");
         started = true;
         resetBoard();
     }
-
     changePlayer();
 }
 
@@ -127,7 +128,7 @@ const disableCards = () =>{
         resetBoard();
         changePlayer();
     }, 1500);
-};
+};//if the cards converge, then the animation of how they disappear begins
 
 const unflipCards = () => {
     setTimeout(()=>{
@@ -137,7 +138,7 @@ const unflipCards = () => {
         changePlayer();
         resetBoard();
     }, 500);
-};
+};//if the card is chosen incorrectly, then the animation is played back
 
 const resetBoard = () =>{
     hasFlipCard = false;
@@ -156,8 +157,8 @@ const resetCards = () =>{
         score1.textContent = score2.textContent = 0;
     
     });
-};
+};//I put it all in one algorithm, because it's much easier to start the game without taking up a lot of space with unnecessary code
 
-resetCards();
+resetCards();//The name doesn't fit a bit, however this line starts the whole game
 
 

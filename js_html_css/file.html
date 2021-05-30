@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- adapts the page for mobile devices-->
     <link rel="stylesheet" href="./file.css">
     <title>Memory_Game</title>
 </head>
@@ -11,7 +11,7 @@
     
     <div class="wrapper">
         
-            <div class="Memory_Game">
+            <div class="Memory_Game"><!--I added a class with data so that you can determine which card is selected by the user-->
         <div class="memory_card" data-cat = "cat1">
             <img src="./images/cat1.jpg" alt="cat" class="front_face">
             <img src="./images/back_face.jpg" alt="" class="back_face">
@@ -60,7 +60,7 @@
             <img src="./images/cat6.jpg" alt="cat" class="front_face">
             <img src="./images/back_face.jpg" alt="" class="back_face">
         </div>
-        <div class = "end_game">
+        <div class = "end_game"><!--This is a game end notification-->
             <h1></h1>
        </div>
     </div>
@@ -71,6 +71,9 @@
                 <img id = "back_img"src="./images/button_score.jpg" alt="button_score" class="back_button">
             </div>
             <div class = "players">
+                <!--initially I wanted to take ready-made pictures that would represent the players,
+                     but then I would not be able to select which of them plays.
+                      Thats the reason why am I used png files-->
                 <img src="./images/player1.png" alt="player1" class = "player1">
                 <img src="./images/player2.png" alt="player2" class = "player2">
                 <div class = "score">

@@ -3,64 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.player1,
-.player2{
-background-color: grey;
-border-radius: 10px;
-}
-.player1.selected,
-.player2.selected{
-    background-color: green;
-}
-.players{
-    height: auto;
-    width: 540px;
-}
-.player1{
-    height: auto;
-    width:auto;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-.player2{
-    height: auto;
-    width:auto;
-    position: relative;
-    float: right;
-    margin-right: 15px;
-    margin-top: 10px;
-}
-.button{
-    height: 70px;
-    width: 158px;
-    position: absolute;
-    margin-left: calc(50% - 75px);
-    margin-top: 5px;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-}
-.buttons{
-    height: 150px;
-    width: 540px;
-    display: flex;
-    margin:auto;
-    position:relative;
-    top: 30px;
-    background-color: rgb(11 10 90);
-    border-radius: 10px;
-}
-.back_button,
-.front_button{
-    backface-visibility: hidden;
-    position: absolute;
-}
-.back_button{
-    transform: rotateX(180deg);
-}
 
-.button.flip{
-    transform: rotateX(180deg);
-}
+
 
 .wrapper{
     height: 100vh;
@@ -71,6 +15,7 @@ border-radius: 10px;
     transform: scale(0.01);
     transition: transform 0.5s;
 }
+/* when I set the value to 0, the card disappeared without animations, so I decided to do it in 2 steps to make it look beautiful */
 .memory_card.disappear{
     transform: scale(0);
 }
@@ -115,6 +60,65 @@ backface-visibility: hidden;
 .front_face{
     transform: rotateY(180deg);
 }
+.player1,
+.player2{
+background-color: grey;
+border-radius: 10px;
+}
+.player1.selected,
+.player2.selected{
+    background-color: green;
+}
+.players{
+    height: auto;
+    width: 540px;
+}
+.player1{
+    height: auto;
+    width:auto;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.player2{
+    height: auto;
+    width:auto;
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.button{
+    height: 70px;
+    width: 158px;
+    position: absolute;
+    margin-left: calc(50% - 75px);
+    margin-top: 5px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+.buttons{
+    height: 150px;
+    width: 540px;
+    display: flex;
+    margin:auto;
+    position:relative;
+    top: 30px;
+    background-color: rgb(11 10 90);
+    border-radius: 10px;
+}
+.back_button,
+.front_button{
+    backface-visibility: hidden;
+    position: absolute;
+}
+.back_button{
+    transform: rotateX(180deg);
+}
+
+.button.flip{
+    transform: rotateX(180deg);
+}
 
 .score{
     width: 40%;
@@ -151,16 +155,6 @@ backface-visibility: hidden;
     background-color: #07d100;
     transition: transform 0.5s;
     border-radius: 10px;
-}
-
-.restart{
-    width: auto;
-    height: auto;
-    position: absolute;
-    margin: 0;
-    margin-top: auto;
-    text-align: center;
-    font-size: 300;
 }
 
 .button.flip.double{
